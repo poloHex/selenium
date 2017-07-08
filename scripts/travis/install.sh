@@ -14,10 +14,11 @@ if [[ ! -z $MARIONETTE ]]; then
 fi
 
 if [[ ! -z $PHANTOMJS ]]; then
-  #export PHANTOMJS_NAME=phantomjs-2.1.1-linux-x86_64
-  #curl -OL "https://bitbucket.org/ariya/phantomjs/downloads/${PHANTOMJS_NAME}.tar.bz2"
-  #tar -xvjf $PHANTOMJS_NAME.tar.bz2
-  #chmod +x $PHANTOMJS_NAME/bin/phantomjs
+  export PHANTOMJS_NAME=phantomjs-2.1.1-linux-x86_64
+  curl -OL "https://bitbucket.org/ariya/phantomjs/downloads/${PHANTOMJS_NAME}.tar.bz2"
+  tar -xvjf $PHANTOMJS_NAME.tar.bz2
+  chmod +x $PHANTOMJS_NAME/bin/phantomjs
+  sudo mv $PHANTOMJS_NAME/bin/phantomjs /usr/local/bin
   phantomjs -v
 fi
 
